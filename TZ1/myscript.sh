@@ -50,10 +50,10 @@ f() {
 			# проверяем имя файля на совпадения, при необходимости меняем
 			if [[ -e "$dest" ]]; then
 				counter=1
-				while [[ -e "$out/${name%.*}$counter.${name##*.}" ]]; do
+				while [[ -e "$out/$counter$name" ]]; do
 					((counter++))
 				done
-				dest="$out/${name%.*}$counter.${name##*.}"
+				dest="$out/$counter$name"
 			fi
 			cp "$file" "$dest" 2>/dev/null
 		fi

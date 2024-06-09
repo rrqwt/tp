@@ -40,6 +40,7 @@ fi
 f() {
 	local in="$1"
 	local out="$2"
+ 	shopt -s dotglob
 	for file in "$in"/*; do
 		# для вложенных директорий рекурсивно запускаем функцию
 		if [[ -d "$file" ]]; then
